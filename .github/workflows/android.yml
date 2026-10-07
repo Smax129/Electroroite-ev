@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: Instalar dependencias
         run: npm install --legacy-peer-deps
@@ -41,16 +41,11 @@ jobs:
           fi
           npx cap sync android
 
-      - name: Forzar compatibilidad Java en Gradle
-        run: |
-          echo "android.compileSdkVersion=34" >> android/gradle.properties
-          echo "org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8" >> android/gradle.properties
-
       - name: Crear APK
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --stacktrace
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
