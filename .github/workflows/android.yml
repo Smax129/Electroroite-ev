@@ -1,4 +1,4 @@
-name: Crear APK Android
+Name: Crear APK Android
 
 on:
   workflow_dispatch:
@@ -17,13 +17,13 @@ jobs:
           node-version: 22
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Compilar aplicación web
         run: npm run build
 
       - name: Instalar Capacitor
-        run: npm install @capacitor/core @capacitor/cli @capacitor/android
+        run: npm install @capacitor/core @capacitor/cli @capacitor/android --legacy-peer-deps
 
       - name: Crear configuración de Capacitor
         run: |
