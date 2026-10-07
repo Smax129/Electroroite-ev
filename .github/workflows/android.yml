@@ -41,6 +41,11 @@ jobs:
           fi
           npx cap sync android
 
+      - name: Forzar compatibilidad Java en Gradle
+        run: |
+          echo "android.compileSdkVersion=34" >> android/gradle.properties
+          echo "org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8" >> android/gradle.properties
+
       - name: Crear APK
         run: |
           cd android
