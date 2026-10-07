@@ -1,0 +1,6 @@
+{
+  "name": "ElectroRoute EV - Planificador de Rutas VE",
+  "description": "Planificador inteligente de rutas para vehículos eléctricos estilo ABRP con cálculo de batería, desnivel, velocidad, temperatura, redes de carga rápida y notificaciones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

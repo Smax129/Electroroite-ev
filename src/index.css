@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  background-color: #0b1120 !important;
+}
+
+.leaflet-tile {
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.custom-map-pin, .custom-charger-pin {
+  background: transparent !important;
+  border: none !important;
+}

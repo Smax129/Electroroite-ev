@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)" />
+  <circle cx="256" cy="256" r="190" stroke="url(#circleGrad)" stroke-width="12" fill="none" stroke-dasharray="16 10" />
+  <!-- Road path curving into distance -->
+  <path d="M 170 390 L 230 256 L 246 200 L 256 160 L 266 200 L 282 256 L 342 390" stroke="#334155" stroke-width="18" stroke-linecap="round" fill="none" />
+  <path d="M 256 380 L 256 220" stroke="#64748b" stroke-width="6" stroke-dasharray="14 14" stroke-linecap="round" />
+  <!-- Electric lightning bolt -->
+  <path d="M 280 110 L 195 260 L 250 260 L 232 402 L 325 240 L 270 240 Z" fill="url(#boltGrad)" filter="drop-shadow(0 0 16px rgba(16, 185, 129, 0.6))" />
+</svg>
