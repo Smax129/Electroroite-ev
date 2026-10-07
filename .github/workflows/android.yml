@@ -11,19 +11,16 @@ jobs:
       - name: Descargar proyecto
         uses: actions/checkout@v4
 
-      - name: Instalar Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: 22
-
       - name: Configurar Java
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Instalar dependencias
-        run: npm install --legacy-peer-deps
+      - name: Instalar dependencias globales y de proyecto
+        run: |
+          npm install -g npm@latest
+          npm install --legacy-peer-deps
 
       - name: Compilar aplicación web
         run: npm run build
@@ -31,20 +28,15 @@ jobs:
       - name: Instalar Capacitor
         run: npm install @capacitor/core @capacitor/cli @capacitor/android --legacy-peer-deps
 
-      - name: Crear configuración de Capacitor
+      - name: Crear configuración y sincronizar
         run: |
           if [ ! -f capacitor.config.ts ] && [ ! -f capacitor.config.json ]; then
             npx cap init "Electroroite EV" "com.electroroite.ev" --web-dir dist
           fi
-
-      - name: Añadir Android
-        run: |
           if [ ! -d android ]; then
             npx cap add android
           fi
-
-      - name: Sincronizar aplicación con Android
-        run: npx cap sync android
+          npx cap sync android
 
       - name: Crear APK
         run: |
