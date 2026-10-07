@@ -16,6 +16,12 @@ jobs:
         with:
           node-version: 22
 
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Instalar dependencias
         run: npm install --legacy-peer-deps
 
