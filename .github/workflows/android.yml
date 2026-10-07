@@ -11,16 +11,19 @@ jobs:
       - name: Descargar proyecto
         uses: actions/checkout@v4
 
+      - name: Instalar Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
       - name: Configurar Java
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Instalar dependencias globales y de proyecto
-        run: |
-          npm install -g npm@latest
-          npm install --legacy-peer-deps
+      - name: Instalar dependencias
+        run: npm install --legacy-peer-deps
 
       - name: Compilar aplicación web
         run: npm run build
