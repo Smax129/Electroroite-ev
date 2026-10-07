@@ -46,6 +46,10 @@ jobs:
       - name: Sincronizar aplicación con Android
         run: npx cap sync android
 
+      - name: Forzar versión de Java en Gradle
+        run: |
+          echo "org.gradle.java.home=${JAVA_HOME}" >> android/gradle.properties
+
       - name: Crear APK
         run: |
           cd android
